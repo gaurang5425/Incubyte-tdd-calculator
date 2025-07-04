@@ -27,4 +27,3 @@ class StringCalculatorTddApplicationTests {
 		assertEquals(10, calculator.add("4,6"));
 	}
 }
-  
