@@ -39,4 +39,12 @@ class StringCalculatorTddApplicationTests {
 		assertEquals(6, calculator.add("1\n2,3"));
 		assertEquals(10, calculator.add("1\n2\n3\n4"));
 	}
+
+	@Test
+	public void should_handle_custom_delimiter() {
+		StringCalculator calculator = new StringCalculator();
+		assertEquals(3, calculator.add("//;\n1;2"));
+		assertEquals(10, calculator.add("//|\n1|2|3|4"));
+	}
+	
 }
