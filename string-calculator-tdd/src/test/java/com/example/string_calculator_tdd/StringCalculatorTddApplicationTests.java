@@ -46,5 +46,5 @@ class StringCalculatorTddApplicationTests {
 		assertEquals(3, calculator.add("//;\n1;2"));
 		assertEquals(10, calculator.add("//|\n1|2|3|4"));
 	}
-	
+
 }
