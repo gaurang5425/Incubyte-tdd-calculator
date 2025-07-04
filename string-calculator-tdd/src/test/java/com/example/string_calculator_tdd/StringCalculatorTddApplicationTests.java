@@ -76,5 +76,5 @@ class StringCalculatorTddApplicationTests {
 		assertEquals(10, calculator.add("//[abc]\n1abc2abc3abc4"));
 	}
 
-	
+
 }
