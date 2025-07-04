@@ -62,4 +62,11 @@ class StringCalculatorTddApplicationTests {
 		});
 		assertEquals("Negative numbers not allowed: -2, -3", exception.getMessage());
 	}
+
+	@Test
+	public void should_ignore_numbers_greater_than_1000() {
+		StringCalculator calculator = new StringCalculator();
+		assertEquals(2, calculator.add("1001,2"));
+		assertEquals(1000, calculator.add("1000"));
+	}
 }
