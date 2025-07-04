@@ -26,4 +26,11 @@ class StringCalculatorTddApplicationTests {
 		assertEquals(3, calculator.add("1,2"));
 		assertEquals(10, calculator.add("4,6"));
 	}
+
+	@Test
+	public void should_handle_multiple_numbers() {
+		StringCalculator calculator = new StringCalculator();
+		assertEquals(15, calculator.add("1,2,3,4,5"));
+		assertEquals(21, calculator.add("1,2,3,4,5,6"));
+	}
 }
