@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
 class StringCalculatorTddApplicationTests {
@@ -47,4 +48,18 @@ class StringCalculatorTddApplicationTests {
 		assertEquals(10, calculator.add("//|\n1|2|3|4"));
 	}
 
+	@Test
+	public void should_throw_exception_for_negative_numbers() {
+		StringCalculator calculator = new StringCalculator();
+
+		Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+			calculator.add("1,-2,3");
+		});
+		assertEquals("Negative numbers not allowed: -2", exception.getMessage());
+
+		exception = assertThrows(IllegalArgumentException.class, () -> {
+			calculator.add("1,-2,-3");
+		});
+		assertEquals("Negative numbers not allowed: -2, -3", exception.getMessage());
+	}
 }
